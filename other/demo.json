@@ -1,0 +1,559 @@
+{
+	"editCanvasConfig": {
+		"width": 1920,
+		"height": 1080,
+		"filterShow": false,
+		"hueRotate": 0,
+		"saturate": 1,
+		"contrast": 1,
+		"brightness": 1,
+		"opacity": 1,
+		"rotateZ": 0,
+		"rotateX": 0,
+		"rotateY": 0,
+		"skewX": 0,
+		"skewY": 0,
+		"blendMode": "normal",
+		"background": null,
+		"backgroundImage": null,
+		"selectColor": true,
+		"chartThemeColor": "dark",
+		"chartThemeSetting": {
+			"title": {"show": true, "textStyle": {"color": "#BFBFBF", "fontSize": 18}, "subtextStyle": {"color": "#A2A2A2", "fontSize": 14}},
+			"xAxis": {
+				"show": true,
+				"name": "",
+				"nameGap": 15,
+				"nameTextStyle": {"color": "#B9B8CE", "fontSize": 12},
+				"inverse": false,
+				"axisLabel": {"show": true, "fontSize": 12, "color": "#B9B8CE"},
+				"position": "bottom",
+				"axisLine": {"show": true, "lineStyle": {"color": "#B9B8CE", "width": 1}, "onZero": true},
+				"axisTick": {"show": true, "length": 5},
+				"splitLine": {"show": false, "lineStyle": {"color": "#484753", "width": 1, "type": "solid"}}
+			},
+			"yAxis": {
+				"show": true,
+				"name": "",
+				"nameGap": 15,
+				"nameTextStyle": {"color": "#B9B8CE", "fontSize": 12},
+				"inverse": false,
+				"axisLabel": {"show": true, "fontSize": 12, "color": "#B9B8CE"},
+				"position": "left",
+				"axisLine": {"show": true, "lineStyle": {"color": "#B9B8CE", "width": 1}, "onZero": true},
+				"axisTick": {"show": true, "length": 5},
+				"splitLine": {"show": true, "lineStyle": {"color": "#484753", "width": 1, "type": "solid"}}
+			},
+			"legend": {"show": true, "top": "5%", "textStyle": {"color": "#B9B8CE"}},
+			"dataset": null
+		},
+		"previewScaleType": "fit"
+	},
+	"componentList": [
+		{
+			"id": "cak958ayk3s0000",
+			"isGroup": false,
+			"attr": {"x": -14, "y": 152, "w": 500, "h": 300, "offsetX": 0, "offsetY": 0, "zIndex": -1},
+			"styles": {
+				"filterShow": false,
+				"hueRotate": 0,
+				"saturate": 1,
+				"contrast": 1,
+				"brightness": 1,
+				"opacity": 1,
+				"rotateZ": 0,
+				"rotateX": 0,
+				"rotateY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"blendMode": "normal",
+				"animations": []
+			},
+			"status": {"lock": false, "hide": false},
+			"request": {
+				"requestDataType": 0,
+				"requestHttpType": "get",
+				"requestUrl": "",
+				"requestInterval": null,
+				"requestIntervalUnit": "second",
+				"requestContentType": 0,
+				"requestParamsBodyType": "none",
+				"requestSQLContent": {"sql": "select * from  where"},
+				"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+			},
+			"filter": null,
+			"events": {
+				"vnodeBeforeMount": "",
+				"vnodeMounted": "// vue 触发生命周期事件时的事件参数\r\nconsole.log(e)\r\n// this === components[this.props.chartConfig.id]\r\nconsole.log(this)\r\n// 当前图表组件集合\r\nconsole.log(components)\r\n// 网上echarts示例option代码中使用到了echarts的方法\r\nconsole.log(echarts)\r\n// 获取代码中项目提供的包\r\nconsole.log(node_modules)\r\n// 远程加载\r\nconst _ = await import('https://cdn.skypack.dev/lodash')\r\nconsole.log(_)\r\nconst fooArr = [\r\n  { id: 'zs', name: 'zhangsan'},\r\n  { id: 'zs', name: '张三'},\r\n  { id: 'ls', name: 'linsi'}\r\n]\r\n// 使用lodash去除id相同的元素\r\n_.uniqBy(fooArr, 'id')\r\n\r\n// 获取echart实例\r\nconst chart = this.refs.vChartRef.chart\r\n// 图表设置派发事件 例如：实现跳转、图表联动等功能\r\nchart.on('click', 'series', function (e) {\r\n  // 当前组件内通过components获取指定组件直接改变视图 \r\n  // 或者 事件派发具体数据处理交由组件本身去处理\r\n  // components['1arv6m0tglpc0'].setupState.option.dataset = JSON.stringify(e.data)\r\n  dispatchEvent(new CustomEvent('clickSeries', {detail: e.data}))\r\n});\r\n// 图表设置tooltip\r\nchart.setOption({\r\n  tooltip: {\r\n    trigger: 'axis', //item\r\n    enterable: true, \r\n    formatter (params) {\r\n      return `\r\n        <div>\r\n          <img src=\"https://portrait.gitee.com/uploads/avatars/user/1654/4964818_MTrun_1653229420.png!avatar30\">\r\n          <b><a href=\"https://gitee.com/dromara/go-view\">《这是一个自定义的tooltip》</a></b>\r\n        <div>\r\n        <div style='border-radius:35px;color:#666'>\r\n          ${Object.entries(params[0].value).map(kv => `<div>${kv[0]}:${kv[1]}</div>`).join('')}\r\n        </div>\r\n      `;\r\n    },\r\n  }\r\n})"
+			},
+			"key": "BarCommon",
+			"chartConfig": {
+				"key": "BarCommon",
+				"chartKey": "VBarCommon",
+				"conKey": "VCBarCommon",
+				"title": "柱状图",
+				"category": "Bars",
+				"categoryName": "柱状图",
+				"package": "Charts",
+				"chartFrame": "echarts",
+				"image": "/src/assets/images/chart/charts/bar_x.png"
+			},
+			"option": {
+				"legend": {"show": true, "top": "5%", "textStyle": {"color": "#B9B8CE"}},
+				"xAxis": {
+					"show": true,
+					"name": "",
+					"nameGap": 15,
+					"nameTextStyle": {"color": "#B9B8CE", "fontSize": 12},
+					"inverse": false,
+					"axisLabel": {"show": true, "fontSize": 12, "color": "#B9B8CE"},
+					"position": "bottom",
+					"axisLine": {"show": true, "lineStyle": {"color": "#B9B8CE", "width": 1}, "onZero": true},
+					"axisTick": {"show": true, "length": 5},
+					"splitLine": {"show": false, "lineStyle": {"color": "#484753", "width": 1, "type": "solid"}},
+					"type": "category"
+				},
+				"yAxis": {
+					"show": true,
+					"name": "",
+					"nameGap": 15,
+					"nameTextStyle": {"color": "#B9B8CE", "fontSize": 12},
+					"inverse": false,
+					"axisLabel": {"show": true, "fontSize": 12, "color": "#B9B8CE"},
+					"position": "left",
+					"axisLine": {"show": true, "lineStyle": {"color": "#B9B8CE", "width": 1}, "onZero": true},
+					"axisTick": {"show": true, "length": 5},
+					"splitLine": {"show": true, "lineStyle": {"color": "#484753", "width": 1, "type": "solid"}},
+					"type": "value"
+				},
+				"tooltip": {"show": true, "trigger": "axis", "axisPointer": {"show": true, "type": "shadow"}},
+				"dataset": {
+					"dimensions": ["日期", "已完成", "未完成"],
+					"source": [
+						{"日期": "Mon", "已完成": 12, "未完成": 13},
+						{"日期": "Tue", "已完成": 20, "未完成": 30},
+						{"日期": "Wed", "已完成": 50, "未完成": 32},
+						{"日期": "Thu", "已完成": 80, "未完成": 68},
+						{"日期": "Fri", "已完成": 70, "未完成": 55},
+						{"日期": "Sat", "已完成": 90, "未完成": 37},
+						{"日期": "Sun", "已完成": 30, "未完成": 60}
+					]
+				},
+				"series": [
+					{"type": "bar", "label": {}, "barWidth": null, "itemStyle": {"color": null, "borderRadius": 0}},
+					{"type": "bar", "label": {}, "barWidth": null, "itemStyle": {"color": null, "borderRadius": 0}}
+				],
+				"backgroundColor": "rgba(0,0,0,0)"
+			}
+		},
+		{
+			"id": "6stm12sgdjg0000",
+			"isGroup": false,
+			"attr": {"x": -71, "y": 609, "w": 500, "h": 300, "offsetX": 0, "offsetY": 0, "zIndex": -1},
+			"styles": {
+				"filterShow": false,
+				"hueRotate": 0,
+				"saturate": 1,
+				"contrast": 1,
+				"brightness": 1,
+				"opacity": 1,
+				"rotateZ": 0,
+				"rotateX": 0,
+				"rotateY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"blendMode": "normal",
+				"animations": []
+			},
+			"status": {"lock": false, "hide": false},
+			"request": {
+				"requestDataType": 0,
+				"requestHttpType": "get",
+				"requestUrl": "",
+				"requestInterval": null,
+				"requestIntervalUnit": "second",
+				"requestContentType": 0,
+				"requestParamsBodyType": "none",
+				"requestSQLContent": {"sql": "select * from  where"},
+				"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+			},
+			"filter": null,
+			"events": {
+				"vnodeBeforeMount": "addEventListener('clickSeries', (e)=>{\r\n  // 设置图标组件数据视图 例：可先获取到图标的 chart 引用\r\n  // 方式1、 （组件代码中有绑定<v-chart ref=\"vChartRef\">）\r\n  //  const chart = component.refs.vChartRef.chart\r\n  // 方式2、组件代码中没有绑定ref\r\n  //  const chart = component.vnode.el.__vueParentComponent.ctx.chart\r\n  // 注：具体组件视图如何变更不同组件各有差异\r\n  const chart = this.vnode.el.__vueParentComponent.ctx.chart\r\n  this.setupState.dataHandle(e.detail['已完成'] / (e.detail['已完成'] + e.detail['未完成'])) // 修改option\r\n  const newOption = this.setupState.option.value\r\n  chart.setOption(newOption)\r\n})",
+				"vnodeMounted": "console.log(e, '---')"
+			},
+			"key": "PieCircle",
+			"chartConfig": {
+				"key": "PieCircle",
+				"chartKey": "VPieCircle",
+				"conKey": "VCPieCircle",
+				"title": "饼图-环形",
+				"category": "Pies",
+				"categoryName": "饼图",
+				"package": "Charts",
+				"chartFrame": "echarts",
+				"image": "/src/assets/images/chart/charts/pie-circle.png"
+			},
+			"option": {
+				"tooltip": {"show": true, "trigger": "item"},
+				"legend": {"show": true},
+				"dataset": 0.25,
+				"title": {"text": "25.00%", "x": "center", "y": "center", "textStyle": {"color": "#56B9F8", "fontSize": 30}},
+				"series": [
+					{
+						"type": "pie",
+						"radius": ["75%", "80%"],
+						"center": ["50%", "50%"],
+						"hoverAnimation": true,
+						"color": ["#00bcd44a", "transparent"],
+						"label": {"show": false},
+						"data": [
+							{"value": [25], "itemStyle": {"color": "#03a9f4", "shadowBlur": 10, "shadowColor": "#97e2f5"}},
+							{"value": [75], "itemStyle": {"color": "#00bcd44a", "shadowBlur": 0, "shadowColor": "#00bcd44a"}}
+						]
+					}
+				],
+				"backgroundColor": "rgba(0,0,0,0)"
+			}
+		},
+		{
+			"id": "1arv6m0tglpc0",
+			"isGroup": false,
+			"attr": {"x": -35, "y": 487, "w": 505, "h": 84, "offsetX": 0, "offsetY": 0, "zIndex": -1},
+			"styles": {
+				"filterShow": false,
+				"hueRotate": 0,
+				"saturate": 1,
+				"contrast": 1,
+				"brightness": 1,
+				"opacity": 1,
+				"rotateZ": 0,
+				"rotateX": 0,
+				"rotateY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"blendMode": "normal",
+				"animations": []
+			},
+			"status": {"lock": false, "hide": false},
+			"request": {
+				"requestDataType": 0,
+				"requestHttpType": "get",
+				"requestUrl": "",
+				"requestInterval": null,
+				"requestIntervalUnit": "second",
+				"requestContentType": 0,
+				"requestParamsBodyType": "none",
+				"requestSQLContent": {"sql": "select * from  where"},
+				"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+			},
+			"filter": null,
+			"events": {
+				"vnodeBeforeMount": "addEventListener('clickSeries', (e)=>{\r\n  this.setupState.option.dataset = JSON.stringify(e.detail)\r\n})",
+				"vnodeMounted": "\r\n  "
+			},
+			"key": "TextCommon",
+			"chartConfig": {
+				"key": "TextCommon",
+				"chartKey": "VTextCommon",
+				"conKey": "VCTextCommon",
+				"title": "文字",
+				"category": "Texts",
+				"categoryName": "文本",
+				"package": "Informations",
+				"image": "/src/assets/images/chart/informations/text_static.png"
+			},
+			"option": {
+				"link": "",
+				"linkHead": "http://",
+				"dataset": "点击series切换每日进度描述",
+				"fontSize": 20,
+				"fontColor": "#ffffff",
+				"paddingX": 10,
+				"paddingY": 10,
+				"textAlign": "center",
+				"fontWeight": "normal",
+				"borderWidth": 0,
+				"borderColor": "#ffffff",
+				"borderRadius": 5,
+				"letterSpacing": 5,
+				"writingMode": "horizontal-tb",
+				"backgroundColor": "#00000000"
+			}
+		},
+		{
+			"id": "ujimc1imif400",
+			"isGroup": false,
+			"attr": {"x": 657, "y": -46, "w": 1246, "h": 996, "offsetX": 0, "offsetY": 0, "zIndex": -1},
+			"styles": {
+				"filterShow": false,
+				"hueRotate": 0,
+				"saturate": 1,
+				"contrast": 1,
+				"brightness": 1,
+				"opacity": 1,
+				"rotateZ": 0,
+				"rotateX": 0,
+				"rotateY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"blendMode": "normal",
+				"animations": []
+			},
+			"status": {"lock": false, "hide": false},
+			"request": {
+				"requestDataType": 0,
+				"requestHttpType": "get",
+				"requestUrl": "",
+				"requestInterval": null,
+				"requestIntervalUnit": "second",
+				"requestContentType": 0,
+				"requestParamsBodyType": "none",
+				"requestSQLContent": {"sql": "select * from  where"},
+				"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+			},
+			"filter": null,
+			"events": {
+				"vnodeBeforeMount": "",
+				"vnodeMounted": "const chart = this.refs.vChartRef.chart\r\n// 定义地图原点大小 同理可自定义标签等等内容\r\nthis.props.chartConfig.option.series[0].symbolSize = (val) => {\r\n  return Math.sqrt(val[2]) / 3;\r\n}\r\nthis.setupState.vEchartsSetOption();\r\nlet i = 0; // 当前轮播索引\r\nconst len = 3; // 轮播部分提示\r\n(function showTips() {\r\n  const action = (type, dataIndex) => {\r\n    chart.dispatchAction({\r\n      type,\r\n      dataIndex,\r\n      seriesIndex: 0,\r\n    });\r\n  }\r\n  setInterval(() => {\r\n    action(\"downplay\", i);\r\n    action(\"hideTip\", i);\r\n    if (i === len) i = 0;\r\n    i++;\r\n    action(\"highlight\", i);\r\n    action(\"showTip\", i);\r\n  }, 2000);\r\n})()"
+			},
+			"key": "MapBase",
+			"chartConfig": {
+				"key": "MapBase",
+				"chartKey": "VMapBase",
+				"conKey": "VCMapBase",
+				"title": "地图(可选省份)",
+				"category": "Maps",
+				"categoryName": "地图",
+				"package": "Charts",
+				"chartFrame": "common",
+				"image": "/src/assets/images/chart/charts/map.png"
+			},
+			"option": {
+				"dataset": {
+					"point": [
+						{"name": "北京", "value": [116.405285, 39.904989, 200]},
+						{"name": "郑州", "value": [113.665412, 34.757975, 888]},
+						{"name": "青海", "value": [101.778916, 36.623178, 666]},
+						{"name": "宁夏回族自治区", "value": [106.278179, 38.46637, 66]},
+						{"name": "哈尔滨市", "value": [126.642464, 45.756967, 101]}
+					],
+					"map": [
+						{"name": "北京市", "value": 666},
+						{"name": "河北省", "value": 98},
+						{"name": "江苏省", "value": 300},
+						{"name": "福建省", "value": 1199},
+						{"name": "山东省", "value": 86},
+						{"name": "河南省", "value": 850},
+						{"name": "湖北省", "value": 84},
+						{"name": "广西壮族自治区", "value": 81},
+						{"name": "海南省", "value": 900},
+						{"name": "青海省", "value": 800},
+						{"name": "新疆维吾尔自治区", "value": 7}
+					],
+					"pieces": [
+						{"gte": 1000, "label": ">1000"},
+						{"gte": 600, "lte": 999, "label": "600-999"},
+						{"gte": 200, "lte": 599, "label": "200-599"},
+						{"gte": 50, "lte": 199, "label": "49-199"},
+						{"gte": 10, "lte": 49, "label": "10-49"},
+						{"lte": 9, "label": "<9"}
+					]
+				},
+				"mapRegion": {"adcode": "china", "showHainanIsLands": false},
+				"tooltip": {"show": true, "trigger": "item"},
+				"visualMap": {
+					"show": true,
+					"orient": "vertical",
+					"pieces": [
+						{"gte": 1000, "label": ">1000"},
+						{"gte": 600, "lte": 999, "label": "600-999"},
+						{"gte": 200, "lte": 599, "label": "200-599"},
+						{"gte": 50, "lte": 199, "label": "49-199"},
+						{"gte": 10, "lte": 49, "label": "10-49"},
+						{"lte": 9, "label": "<9"}
+					],
+					"inRange": {"color": ["#c3d7df", "#5cb3cc", "#8abcd1", "#66a9c9", "#2f90b9", "#1781b5"]},
+					"textStyle": {"color": "#fff"}
+				},
+				"geo": {"show": false, "type": "map", "roam": false, "map": "china", "selectedMode": false, "zoom": 1},
+				"series": [
+					{
+						"name": "",
+						"type": "effectScatter",
+						"coordinateSystem": "geo",
+						"symbolSize": 5,
+						"legendHoverLink": true,
+						"showEffectOn": "render",
+						"rippleEffect": {"scale": 5, "color": "#FFFFFF", "brushType": "fill"},
+						"tooltip": {
+							"show": true,
+							"backgroundColor": "rgba(0,0,0,.6)",
+							"borderColor": "rgba(147, 235, 248, .8)",
+							"textStyle": {"color": "#FFF"}
+						},
+						"label": {
+							"formatter": "{b}",
+							"fontSize": 11,
+							"offset": [0, 2],
+							"position": "bottom",
+							"textBorderColor": "#fff",
+							"textShadowColor": "#000",
+							"textShadowBlur": 10,
+							"textBorderWidth": 0,
+							"color": "#FFFFFF",
+							"show": true
+						},
+						"itemStyle": {
+							"color": "#FFFFFF",
+							"borderColor": "rgba(225,255,255,2)",
+							"borderWidth": 4,
+							"shadowColor": "#E1FFFF",
+							"shadowBlur": 10
+						},
+						"data": [
+							{"name": "北京", "value": [116.405285, 39.904989, 200]},
+							{"name": "郑州", "value": [113.665412, 34.757975, 888]},
+							{"name": "青海", "value": [101.778916, 36.623178, 666]},
+							{"name": "宁夏回族自治区", "value": [106.278179, 38.46637, 66]},
+							{"name": "哈尔滨市", "value": [126.642464, 45.756967, 101]}
+						]
+					},
+					{
+						"name": "区域",
+						"type": "map",
+						"map": "china",
+						"data": [
+							{"name": "北京市", "value": 666},
+							{"name": "河北省", "value": 98},
+							{"name": "江苏省", "value": 300},
+							{"name": "福建省", "value": 1199},
+							{"name": "山东省", "value": 86},
+							{"name": "河南省", "value": 850},
+							{"name": "湖北省", "value": 84},
+							{"name": "广西壮族自治区", "value": 81},
+							{"name": "海南省", "value": 900},
+							{"name": "青海省", "value": 800},
+							{"name": "新疆维吾尔自治区", "value": 7}
+						],
+						"selectedMode": false,
+						"zoom": 1,
+						"geoIndex": 1,
+						"tooltip": {
+							"show": true,
+							"backgroundColor": "#00000060",
+							"borderColor": "rgba(147, 235, 248, 0.8)",
+							"textStyle": {"color": "#FFFFFF", "fontSize": 12}
+						},
+						"label": {"show": false, "color": "#FFFFFF", "fontSize": 12},
+						"emphasis": {
+							"disabled": false,
+							"label": {"color": "#FFFFFF", "fontSize": 12},
+							"itemStyle": {"areaColor": "#389BB7", "shadowColor": "#389BB7", "borderWidth": 1}
+						},
+						"itemStyle": {
+							"borderColor": "#93EBF8",
+							"borderWidth": 1,
+							"areaColor": {
+								"type": "radial",
+								"x": 0.5,
+								"y": 0.5,
+								"r": 0.8,
+								"colorStops": [
+									{"offset": 0, "color": "#93ebf800"},
+									{"offset": 1, "color": "#93ebf820"}
+								],
+								"globalCoord": false
+							},
+							"shadowColor": "#80D9F842",
+							"shadowOffsetX": -2,
+							"shadowOffsetY": 2,
+							"shadowBlur": 10
+						}
+					}
+				],
+				"backgroundColor": "rgba(0,0,0,0)"
+			}
+		},
+		{
+			"id": "4qj11fm8qp4000",
+			"isGroup": false,
+			"attr": {"x": 515, "y": 700, "w": 500, "h": 300, "offsetX": 0, "offsetY": 0, "zIndex": -1},
+			"styles": {
+				"filterShow": false,
+				"hueRotate": 0,
+				"saturate": 1,
+				"contrast": 1,
+				"brightness": 1,
+				"opacity": 1,
+				"rotateZ": 0,
+				"rotateX": 0,
+				"rotateY": 0,
+				"skewX": 0,
+				"skewY": 0,
+				"blendMode": "normal",
+				"animations": []
+			},
+			"status": {"lock": false, "hide": false},
+			"request": {
+				"requestDataType": 0,
+				"requestHttpType": "get",
+				"requestUrl": "",
+				"requestInterval": null,
+				"requestIntervalUnit": "second",
+				"requestContentType": 0,
+				"requestParamsBodyType": "none",
+				"requestSQLContent": {"sql": "select * from  where"},
+				"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+			},
+			"filter": null,
+			"events": {
+				"vnodeBeforeMount": "",
+				"vnodeMounted": "// 更精细的设置组件样式\r\n// 组件样式作用域标识\r\nconst scoped = this.subTree.scopeId\r\nfunction loadStyleString(css){\r\n\tlet style = document.createElement('style')\r\n\tstyle.type = 'text/css'\r\n\tstyle.appendChild(document.createTextNode(css))\r\n\tlet head = document.getElementsByTagName('head')[0]\r\n\thead.appendChild(style)\r\n}\r\nloadStyleString(`\r\n.dv-scroll-board[${scoped}] {\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n.dv-scroll-board[${scoped}]::before {\r\n  content: '';\r\n  display: block;\r\n  position: absolute;\r\n  top: -20%;\r\n  left: -100%;\r\n  width: 550px;\r\n  height: 60px;\r\n  transform: rotate(-45deg);\r\n  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));\r\n  animation: cross 2s infinite;\r\n}\r\n@keyframes cross{\r\n  to{\r\n    top: 80%;\r\n    left: 100%;\r\n    transform: rotate(-45deg);\r\n  }\r\n}\r\n`)"
+			},
+			"key": "TableScrollBoard",
+			"chartConfig": {
+				"key": "TableScrollBoard",
+				"chartKey": "VTableScrollBoard",
+				"conKey": "VCTableScrollBoard",
+				"title": "轮播列表",
+				"category": "Tables",
+				"categoryName": "表格",
+				"package": "Tables",
+				"chartFrame": "common",
+				"image": "/src/assets/images/chart/tables/table_scrollboard.png"
+			},
+			"option": {
+				"header": ["列1", "列2", "列3"],
+				"dataset": [
+					["行1列1", "行1列2", "行1列3"],
+					["行2列1", "行2列2", "行2列3"],
+					["行3列1", "行3列2", "行3列3"],
+					["行4列1", "行4列2", "行4列3"],
+					["行5列1", "行5列2", "行5列3"],
+					["行6列1", "行6列2", "行6列3"],
+					["行7列1", "行7列2", "行7列3"],
+					["行8列1", "行8列2", "行8列3"],
+					["行9列1", "行9列2", "行9列3"],
+					["行10列1", "行10列2", "行10列3"]
+				],
+				"index": true,
+				"columnWidth": [30, 100, 100],
+				"align": ["center", "right", "right", "right"],
+				"rowNum": 5,
+				"waitTime": 2,
+				"headerHeight": 35,
+				"carousel": "single",
+				"headerBGC": "#00BAFF",
+				"oddRowBGC": "#003B51",
+				"evenRowBGC": "#0A2732"
+			}
+		}
+	],
+	"requestGlobalConfig": {
+		"requestOriginUrl": "",
+		"requestInterval": 30,
+		"requestIntervalUnit": "second",
+		"requestParams": {"Body": {"form-data": {}, "x-www-form-urlencoded": {}, "json": "", "xml": ""}, "Header": {}, "Params": {}}
+	}
+}
